@@ -3,7 +3,7 @@ from accounts.serializers import EmailSerializer, UserVerifySerializer, UserSeri
 from rest_framework.response import Response
 from rest_framework import status
 from accounts.models import User, Profile
-from accounts.permissions import IsOwnerOrReadOnly
+from utility.permissions import IsOwnerOrReadOnly
 
 
 class UserCreateView(APIView):

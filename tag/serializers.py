@@ -8,8 +8,4 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = ["id", "name", "slug", "description", "parent"]
-        extra_kwargs = {
-            "id": {
-                "read_only": True
-            }
-        }
+        read_only_fields = ("id",)

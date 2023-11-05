@@ -18,6 +18,8 @@ INSTALLED_APPS = [
 
     'accounts.apps.AccountsConfig',
     'tag.apps.TagConfig',
+    'post.apps.PostConfig',
+
 
 ]
 
@@ -29,6 +31,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'utility.middleware.IsObjectExistMiddleware'
 ]
 
 ROOT_URLCONF = 'core.urls'
