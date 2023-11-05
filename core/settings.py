@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'tag.apps.TagConfig',
     'post.apps.PostConfig',
+    'comment.apps.CommentConfig',
 
 
 ]

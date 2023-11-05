@@ -1,8 +1,9 @@
-from post.models import Post
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from django.core.exceptions import ObjectDoesNotExist
+from post.models import Post
+from comment.models import Comment
 from tag.models import Tag
 
 
@@ -11,7 +12,7 @@ class IsObjectExistMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        destinations = ['/post', '/tag']
+        destinations = ['/post', '/tag', '/comment']
         if any([request.path.startswith(path) for path in destinations]) and request.path.count('/') == 3:
             destination = request.path.split("/")[1]
             pk = int(request.path.split("/")[-2])
@@ -21,6 +22,9 @@ class IsObjectExistMiddleware:
 
                 if destination == 'tag':
                     obj = Tag.objects.get(id=pk)
+
+                if destination == 'comment':
+                    obj = Comment.objects.get(id=pk)
 
                 my_request = request.GET.copy()
                 my_request['object'] = obj

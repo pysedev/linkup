@@ -6,6 +6,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('tag/', include('tag.urls', namespace='tag')),
     path('post/', include('post.urls', namespace='post')),
+    path('comment/', include('comment.urls', namespace='comment')),
 
 
 ]
