@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     'tag.apps.TagConfig',
     'post.apps.PostConfig',
     'comment.apps.CommentConfig',
+    'like.apps.LikeConfig',
+
 
 
 ]

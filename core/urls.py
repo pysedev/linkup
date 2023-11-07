@@ -7,6 +7,7 @@ urlpatterns = [
     path('tag/', include('tag.urls', namespace='tag')),
     path('post/', include('post.urls', namespace='post')),
     path('comment/', include('comment.urls', namespace='comment')),
+    path('like/', include('like.urls', namespace='like')),
 
 
 ]
