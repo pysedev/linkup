@@ -8,6 +8,7 @@ urlpatterns = [
     path('post/', include('post.urls', namespace='post')),
     path('comment/', include('comment.urls', namespace='comment')),
     path('like/', include('like.urls', namespace='like')),
+    path('message/', include('message.urls', namespace='message')),
 
 
 ]
